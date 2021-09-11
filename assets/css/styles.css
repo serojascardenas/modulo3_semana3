@@ -1,9 +1,14 @@
 div.form {
-    padding: 20px;
+  padding: 20px;
+}
+
+.form-control[type=file]:not(:disabled):not([readonly]) {
+  padding-top: 1.925rem;
+  direction: rtl;
 }
 
 @media screen and (min-width: 800px) {
-    div.form{
-      max-width: 500px;
-    }
+  div.form{
+    max-width: 500px;
   }
+}
