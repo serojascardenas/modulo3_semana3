@@ -5,6 +5,9 @@ window.addEventListener('DOMContentLoaded', function(event) {
     const allInputs = document.querySelectorAll('input');
     const buttonSave = document.querySelector('#button-save');
     const divProducts = document.querySelector('#div-products');
+    const divListProducts = document.querySelector('#list-products');
+
+    document.cookie = "promo_shown=1; Max-Age=2600000; Secure";
 
     allInputs.forEach(input => {
         input.addEventListener('change', function(event) {
@@ -39,12 +42,12 @@ window.addEventListener('DOMContentLoaded', function(event) {
             inputProductPrice.classList.remove('is-invalid');
             inputProductImg.classList.remove('is-invalid');
 
-            let formatInputProductPrice = formatNumber(inputProductPrice.value);
+            let randomImage = Math.random() * (100 - 1) + 1;
 
             divProducts.innerHTML +=
-                `<div class='col- col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 d-block'>
+                `<div class='col col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 d-block'>
                         <div class="card">
-                            <img src="https://picsum.photos/200/?random=1" class="card-img-top">
+                            <img src="https://picsum.photos/200/?random=${randomImage}" class="card-img-top">
                             <div class="card-body">
                                 <output class="card-title">${inputProductPrice.value}</output>
                                 <p class="card-text">${inputProductName.value.toUpperCase()}</p>
@@ -62,11 +65,9 @@ window.addEventListener('DOMContentLoaded', function(event) {
     inputProductPrice.addEventListener('focus', onFocus);
     inputProductPrice.addEventListener('blur', onBlur);
 
+});
 
 
-
-
-})
 
 function onFocus(e) {
     var value = e.target.value;
