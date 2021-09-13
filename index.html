@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/index.js"></script>
 </head>
@@ -30,20 +29,21 @@
                     <form>
                         <!-- Name of product text-->
                         <div class="form-floating pb-3">
-                            <input type="text" class="form-control" id="input-product-name">
-                            <label for="input-product-name" class="form-label">Product</label>
+                            <textarea class="form-control" id="input-product-name" style="height: 100px"></textarea>
+                            <label for="input-product-name" class="form-label">Product:</label>
                         </div>
                         <!-- Price in decimal-->
                         <div class="form-floating pb-3">
-                            <input class="form-control" type="text" name="currency-field" id="input-product-price" value="" data-type="currency" placeholder=" $1,000.00" />
-                            <label for="input-product-price" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="input-product-price" value=""/>
+                            <label for="input-product-price" class="form-label">Price:</label>
                         </div>
                         <!-- Img can be a link for a random image-->
                         <div class="form-floating pb-3">
                             <input type="file" class="form-control" id="input-product-img" />
-                            <label for="input-product-img" class="form-label">Imagen</label>
+                            <label for="input-product-img" class="form-label">Imagen:</label>
                         </div>
                         <button type="button" class="btn btn-primary" id="button-save">Save</button>
+                        <button type="reset" class="btn btn-secondary" id="button-cancel">Cancel</button>
                     </form>
                 </div>
             </div>
@@ -52,18 +52,29 @@
     </section>
     <!--Section to list products-->
     <div class="border-top my-3"></div>
-    <section>
+    <section class="pb-5">
         <div class="row text-center">
             <h4>Product List</h4>
+            <div id="empty-list">
+                <i class="fas fa-shopping-basket"></i>
+                <spam>List empty! </spam>
+            </div>
         </div>
-        <div class="border-start ms-5 me-5">
+        <div class="border-start">
             <div class="container-fluid">
                 <div class="row text-center" id="div-products">
-
+        
                 </div>
             </div>
         </div>
     </section>
+    <footer class="bg-light text-muted p-4">
+        <div>
+            <p style="margin-bottom: 0;">Master in FullStack Web Development</p>
+            <p style="margin-bottom: 0;">Sonia Elizabeth Rojas Cárdenas</p>
+            <p style="margin-bottom: 0;">Leonardo Marques Pache</p>
+        </div>
+    </footer>
 </body>
 
 </html>
