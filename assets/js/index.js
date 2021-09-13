@@ -47,7 +47,6 @@ window.addEventListener('DOMContentLoaded', function(event) {
             if (divEmpty.style.display === 'block')
                 divEmpty.style.display = 'none';
 
-            let randomImage = Math.random() * (100 - 1) + 1;
             let url = window.URL.createObjectURL(inputProductImg.files[0]);
             
             divProducts.innerHTML +=
@@ -56,7 +55,7 @@ window.addEventListener('DOMContentLoaded', function(event) {
                             <img src="${url}" class="card-img-top">
                             <div class="card-body">
                                 <output class="card-title">${inputProductPrice.value}</output>
-                                <p class="card-text">${inputProductName.value.toUpperCase()}</p>
+                                <p class="card-text">${inputProductName.value}</p>
                             </div>
                         </div>
                     </div>`;
